@@ -12,6 +12,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import Visualization from "./components/visualization/Visualization";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "semantic-ui-css/semantic.min.css";
@@ -47,6 +48,11 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute
+                exact
+                path="/visualization"
+                component={Visualization}
+              />
             </Switch>
           </div>
         </Router>

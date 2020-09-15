@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
-import { Icon } from "semantic-ui-react"
+import { Icon } from "semantic-ui-react";
 
 class Navbar_ extends Component {
   render() {
@@ -25,11 +25,11 @@ class Navbar_ extends Component {
           <Nav.Link href="/Contact">Contact</Nav.Link>
         </Nav>
         <Navbar.Collapse className="justify-content-end">
-        <Icon className="user" size="large"/>
-    <Navbar.Text>
-      Signed in as: <a href="#login">Mark Otto</a>
-    </Navbar.Text>
-  </Navbar.Collapse>
+          <Icon className="user" size="large" />
+          <Navbar.Text>
+            Signed in as: <a href="#login">Mark Otto</a>
+          </Navbar.Text>
+        </Navbar.Collapse>
       </Navbar>
     );
   }
