@@ -20,7 +20,7 @@ class Navbar_ extends Component {
         </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/dashboard">Home</Nav.Link>
-          <Nav.Link href="/Reccomend">Reccomend</Nav.Link>
+          <Nav.Link href="/Recommend">Recommend</Nav.Link>
           <Nav.Link href="/Visualization">Visualization</Nav.Link>
           <Nav.Link href="/Contact">Contact</Nav.Link>
         </Nav>

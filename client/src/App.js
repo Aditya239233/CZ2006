@@ -53,6 +53,7 @@ class App extends Component {
                 path="/visualization"
                 component={Visualization}
               />
+              {/* <PrivateRoute exact path="/recommend" component={Recommend} /> */}
             </Switch>
           </div>
         </Router>
