@@ -14,8 +14,6 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Visualization from "./components/visualization/Visualization";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "semantic-ui-css/semantic.min.css";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
