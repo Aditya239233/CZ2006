@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
+import { connect } from "react-redux";
+
 class Navbar_ extends Component {
   render() {
+    const { user } = this.props;
     return (
       <nav>
         <div className="nav-wrapper white">
@@ -45,7 +48,7 @@ class Navbar_ extends Component {
             <i className="material-icons">settings</i>
           </a>
           <div className="right black-text" style={{ padding: "0px 10px" }}>
-            Not Logged In
+            {user.isAuthenticated ? user.user.name : "Not Logged In"}
           </div>
           <div className="right black-text">
             <i className="material-icons">account_circle</i>
@@ -56,4 +59,10 @@ class Navbar_ extends Component {
   }
 }
 
-export default Navbar_;
+const mapStateToProps = (state) => {
+  return {
+    user: state.auth,
+  };
+};
+
+export default connect(mapStateToProps)(Navbar_);
