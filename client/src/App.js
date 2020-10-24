@@ -42,7 +42,6 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            {console.log(store.getState())}
             <Navbar_ />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
