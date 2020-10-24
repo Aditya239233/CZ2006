@@ -13,6 +13,7 @@ import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Visualization from "./components/visualization/Visualization";
+import { getData } from "./actions/dataActions";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -33,12 +34,15 @@ if (localStorage.jwtToken) {
   }
 }
 
+store.dispatch(getData());
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
           <div className="App">
+            {console.log(store.getState())}
             <Navbar_ />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
