@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { getData } from "../../actions/dataActions";
 
 class Landing extends Component {
   render() {

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
-// import { Icon } from "semantic-ui-react";
 
 import { connect } from "react-redux";
 
