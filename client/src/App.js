@@ -5,6 +5,7 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
+import "./App.css";
 
 import Navbar_ from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
@@ -13,6 +14,7 @@ import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Visualization from "./components/visualization/Visualization";
+import CreateProfile from "./components/recommend/Recommend";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "semantic-ui-css/semantic.min.css";
@@ -53,7 +55,11 @@ class App extends Component {
                 path="/visualization"
                 component={Visualization}
               />
-              {/* <PrivateRoute exact path="/recommend" component={Recommend} /> */}
+              <PrivateRoute
+                exact
+                path="/create-profile"
+                component={CreateProfile}
+              />
             </Switch>
           </div>
         </Router>

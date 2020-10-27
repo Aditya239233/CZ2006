@@ -6,9 +6,7 @@ const ProfileSchema = new mongoose.Schema({
     ref: "users",
   },
   price: {
-    type: Number,
-    min: 100000,
-    max: 1300000,
+    type: String,
     required: true,
   },
   flat_type: {

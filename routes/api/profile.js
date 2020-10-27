@@ -32,10 +32,10 @@ router.get("/me", auth, async (req, res) => {
   }
 });
 
-// @route    POST api/recommend
+// @route    POST api/profile/recommend
 // @desc     Create or update user profile
 // @access   Private
-router.post("/", async (req, res) => {
+router.post("/recommend", async (req, res) => {
   // Form validation
   const { errors, isValid } = validateRecommendInput(req.body);
 
