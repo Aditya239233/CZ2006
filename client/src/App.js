@@ -18,6 +18,7 @@ import CreateProfile from "./components/recommend/Recommend";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "semantic-ui-css/semantic.min.css";
+import { getData } from "./actions/dataActions";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -37,6 +38,8 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
+
+store.dispatch(getData());
 
 class App extends Component {
   render() {
