@@ -7,6 +7,8 @@ import {
   getCurrentProfile,
 } from "../../actions/recommendActions";
 
+import MapContainer from "./Map";
+
 const initialState = {
   price: "",
   flat_type: "",
@@ -134,13 +136,7 @@ const CreateProfile = ({
         </div>
 
         <div className="form-group">
-          <input
-            type="text"
-            placeholder="Location"
-            name="location"
-            value={location}
-            onChange={onChange}
-          />
+          <MapContainer></MapContainer>
           <small className="form-text">
             Click on the map to select your location
           </small>
