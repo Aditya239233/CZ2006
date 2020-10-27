@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { Icon } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+// import { Icon } from "semantic-ui-react";
 
 import { connect } from "react-redux";
 
@@ -27,7 +26,7 @@ class Navbar_ extends Component {
             </Link>
           </div>
           <div className="left" style={{ padding: "0px 10px" }}>
-            <Link className="black-text" to="/recommend">
+            <Link className="black-text" to="/create-profile">
               Recommend
             </Link>
           </div>

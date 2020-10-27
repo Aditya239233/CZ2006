@@ -6,7 +6,6 @@ import {
   createProfile,
   getCurrentProfile,
 } from "../../actions/recommendActions";
-import $ from 'jquery';
 
 const initialState = {
   price: "",
@@ -49,11 +48,12 @@ const CreateProfile = ({
 
   return (
     <Fragment>
+      <div class="container">
       <h1 className="large text-primary">Recommendation Tab</h1>
-      <p className="lead">
+      <p className="lead text-secondary">
         <i className="fas fa-user" /> Add some changes to your search query
       </p>
-      <small>* = required field</small>
+      <small class="red-text">* = required field</small>
       <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
           <select name="price" value={price} onChange={onChange}>
@@ -70,38 +70,69 @@ const CreateProfile = ({
           <small className="form-text">
             Give us an idea of what kind of property you are looking for
           </small>
+        </div>  
+
+      <div className="form-group">  
+      <label class="horizontal-radio">Flat Type</label>
+        <label>
+          <input class="with-gap" name="group1" type="radio"/>
+          <span class="horizontal-radio">1 Room</span>
+        </label>
+        <label>
+          <input class="with-gap" name="group1" type="radio" />
+          <span class="horizontal-radio">2 Room</span>
+        </label>
+        <label>
+          <input class="with-gap" name="group1" type="radio"  />
+          <span class="horizontal-radio">3 Room</span>
+        </label>
+        <label>
+          <input class="with-gap" name="group1" type="radio" />
+          <span class="horizontal-radio">4 Room </span>
+        </label>
+        <label>
+          <input class="with-gap" name="group1" type="radio" />
+          <span class="horizontal-radio">5 Room </span>
+        </label>
+        <label>
+          <input class="with-gap" name="group1" type="radio" />
+          <span class="horizontal-radio">Executive</span>
+        </label>
+      </div>
+
+      <div className="form-group">  
+      <label class="horizontal-radio">Storey</label>
+        <label>
+          <input class="with-gap" name="group2" type="radio"/>
+          <span class="horizontal-radio">Any</span>
+        </label>
+        <label>
+          <input class="with-gap" name="group2" type="radio" />
+          <span class="horizontal-radio">1-3 (Low)</span>
+        </label>
+        <label>
+          <input class="with-gap" name="group2" type="radio"  />
+          <span class="horizontal-radio">4-9 (Mid)</span>
+        </label>
+        <label>
+          <input class="with-gap" name="group2" type="radio" />
+          <span class="horizontal-radio">{'>='}10 (High) </span>
+        </label>
+      </div>
+
+      <div className="form-group">
+          <select name="remaining_lease" value={remaining_lease} onChange={onChange}>
+            <option>Remaining Lease</option>
+            <option value="Any">Any</option>
+            <option value="40-50">40-50</option>
+            <option value="51-60">51-60</option>
+            <option value="61-70">61-70</option>
+            <option value="71-80">71-80</option>
+            <option value="81-90">81-90</option>
+            <option value="> 90">{'>='}90</option>
+          </select>
         </div>
-        <p class="range-field">
-          <input type="range" id="test5" min="0" max="200" name="weight"/>
-          <span class="thumb" ><span class="value">100</span></span>
-        </p>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Flat Type"
-            name="flat_type"
-            value={flat_type}
-            onChange={onChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Storey"
-            name="storey"
-            value={storey}
-            onChange={onChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Remaining Lease"
-            name="remaining_lease"
-            value={remaining_lease}
-            onChange={onChange}
-          />
-        </div>
+
         <div className="form-group">
           <input
             type="text"
@@ -111,15 +142,16 @@ const CreateProfile = ({
             onChange={onChange}
           />
           <small className="form-text">
-            City & state suggested (eg. Boston, MA)
+            Click on the map to select your location
           </small>
         </div>
 
-        <input type="submit" className="btn btn-primary my-1" />
+        <input type="submit" className="btn btn-primary my-1 horizontal-radio" />
         <Link className="btn btn-light my-1" to="/dashboard">
           Go Back
         </Link>
       </form>
+      </div>
     </Fragment>
   );
 };

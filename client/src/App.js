@@ -16,8 +16,8 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Visualization from "./components/visualization/Visualization";
 import CreateProfile from "./components/recommend/Recommend";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "semantic-ui-css/semantic.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "semantic-ui-css/semantic.min.css";
 import { getData } from "./actions/dataActions";
 
 // Check for token to keep user logged in

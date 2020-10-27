@@ -21,11 +21,11 @@ class Dashboard extends Component {
           <div className="center-align" style={{fontSize: "40px", color: "#4c96d7"}}>Find Your Ideal Home</div>
           <div className="center-align" style={{fontSize: "25px", color: "#e78200"}}>Use House Matcher's property recommendation tool to search for a suitable resale HBD</div>
 
-          <div className="column s6" style={{fontSize: "40px", color: "#4c96d7", padding: "30px 0px 0px 0px"}}>HBD Recommendation Tool</div>
+          <div className="column s6 center-align" style={{fontSize: "40px", color: "#4c96d7", padding: "30px 0px 0px 0px"}}>HBD Recommendation Tool</div>
           <div className="center-align" style={{fontSize: "25px", color: "#e78200"}}>Generate a personalised HBD resale recommendation based on your needs</div>
           <div className="center-align" style={{fontSize: "25px", color: "#626262"}}>Tell us the things that you're looking for in a House and we help you to find a suitable HBD for you and plan your future</div>
 
-          <div className="column s6" style={{fontSize: "40px", color: "#4c96d7", padding: "30px 0px 0px 0px"}}>Data Visualization</div>
+          <div className="column s6 center-align" style={{fontSize: "40px", color: "#4c96d7", padding: "30px 0px 0px 0px"}}>Data Visualization</div>
           <div className="center-align" style={{fontSize: "25px", color: "#e78200"}}>Visualize and understand the trends in the market to make a better investment</div>
           <div className="column s12" style={{fontSize: "25px", color: "#626262", padding: "0px 15px"}}>
             <ol>
@@ -35,18 +35,22 @@ class Dashboard extends Component {
             </ol>
           </div>
         </div>
-        <button
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem",
-              }}
-              onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-            >
-              Logout
-            </button>
+        <div class="container-center">
+        <div class="center">
+          <button
+                style={{
+                  width: "150px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px",
+                  marginTop: "1rem",
+                }}
+                onClick={this.onLogoutClick}
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+              >
+                Logout
+              </button>   
+            </div>
+            </div>  
       </div>
     );
   }
