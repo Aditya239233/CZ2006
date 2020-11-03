@@ -11,3 +11,10 @@
   border: none !important;
   background-color: white;
 }
+
+.graph {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

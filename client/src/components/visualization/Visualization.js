@@ -161,11 +161,11 @@ function graph(mode) {
     );
   } else if (mode === "Time Series") {
     return (
-      <div style={{maxHeight: "50px"}}>
+      <div className="graph"style={{ maxWidth: "750px",}}>
         <Line
           data={data_1}
-          width={10}
-          height={10}
+          width={500}
+          height={500}
           options={{
             aintainAspectRatio: false,
             scales: {
