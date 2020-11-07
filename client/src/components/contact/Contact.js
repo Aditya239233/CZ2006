@@ -1,4 +1,6 @@
 import React, { Component, TextField } from "react";
+import { sendMessage } from "../../actions/sendMessage";
+import store from "../../store";
 
 class Contact extends Component {
   constructor() {
@@ -19,6 +21,7 @@ class Contact extends Component {
       message: this.state.message,
     };
     console.log(userData);
+    store.dispatch(sendMessage(userData))
   };
 
   render() {
