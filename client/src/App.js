@@ -16,7 +16,7 @@ import Posts from "./components/posts/Posts";
 import Post from "./components/post/Post";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import Visualization from "./components/visualization/Visualization";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Contact from "./components/contact/Contact";
 
 // Redux
 import { Provider } from "react-redux";
@@ -74,6 +74,7 @@ const App = () => {
                 component={AddEducation}
               />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/contact" component={Contact}/>
             </Switch>
           </section>
         </Fragment>
