@@ -94,6 +94,7 @@ class Visualization extends Component {
 
   render() {
     return (
+      <section className="container">
       <div className="wrapper">
         <div className="inner">
           <button
@@ -121,6 +122,7 @@ class Visualization extends Component {
         </div>
         <div className="">{graph(this.state.data)}</div>
       </div>
+      </section>
     );
   }
 }

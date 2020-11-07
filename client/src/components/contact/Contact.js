@@ -23,40 +23,23 @@ class Contact extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div style={{ marginTop: "4rem" }} className="row">
-          <div className="col s8 offset-s2">
-            <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
-                <input onChange={this.onChange} id="email" type="email" />
-                <label htmlFor="email">Email</label>
-              </div>
-              <div className="input-field col s12">
-                <label htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  onChange={this.onChange}
-                  style={{ width: "600px", height: "300px" }}
-                ></textarea>
-              </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem",
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
+      <section className="container">
+        <form className="form" onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email Address"
+              onChange={this.onChange}
+              required
+              id = "email"
+            />
           </div>
-        </div>
-      </div>
+          <div className="form-group">
+            <textarea id="message" onChange={this.onChange} placeholder="Do you have any Complaints or Suggestions?" required style={{height:"150px"}}></textarea>
+          </div>
+          <input type="submit" className="btn btn-primary" value="Submit" />
+        </form>
+      </section>
     );
   }
 }

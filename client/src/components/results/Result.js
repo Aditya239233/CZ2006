@@ -28,22 +28,28 @@ const CreateProfile = ({
       }
       setFormData(profileData);
     }
-    
-
   }, [loading, getCurrentProfile, profile]);
 
-  const {
-    price, flat_type, storey, remaining_lease, location,
-  } = formData;
+  const { price, flat_type, storey, remaining_lease, location } = formData;
 
   const price_url = price.toString();
-  const flat_type_url = '';
-  const storey_url = '';
-  const remaining_lease_url = '';
-  const location_lease_url = 'BEDOK';
-    $.getJSON('https://data.gov.sg/api/action/datastore_search?resource_id=42ff9cfe-abe5-4b54-beda-c88f9bb438ee&limit=5&q='+price_url+' '+flat_type_url+' '+storey_url+' '+remaining_lease_url+' '+location_lease_url, function(data) {
-        
-        var text = `Town 1: ${data.result.records[0].town}<br>
+  const flat_type_url = "";
+  const storey_url = "";
+  const remaining_lease_url = "";
+  const location_lease_url = "BEDOK";
+  $.getJSON(
+    "https://data.gov.sg/api/action/datastore_search?resource_id=42ff9cfe-abe5-4b54-beda-c88f9bb438ee&limit=5&q=" +
+      price_url +
+      " " +
+      flat_type_url +
+      " " +
+      storey_url +
+      " " +
+      remaining_lease_url +
+      " " +
+      location_lease_url,
+    function (data) {
+      var text = `Town 1: ${data.result.records[0].town}<br>
                     Flat type 1: ${data.result.records[0].flat_type}<br>
                     Block 1: ${data.result.records[0].block}<br>
                     Street name 1: ${data.result.records[0].street_name}<br>
@@ -97,20 +103,19 @@ const CreateProfile = ({
                     Lease commence date 5: ${data.result.records[4].lease_commence_date}<br>
                     Remaining lease 5: ${data.result.records[4].remaining_lease}<br>
                     Resale price 5: ${data.result.records[4].resale_price}<br>
-                    <br>`
-                    
-        
-        $(".mypanel").html(text);
-    });
+                    <br>`;
+
+      $(".mypanel").html(text);
+    }
+  );
 
   return (
-      
     <Fragment>
-      <h1 className="large text-primary">Results Page</h1>
-      
+      <section className="container">
+        <h1 className="large text-primary">Results Page</h1>
 
-      <div class="mypanel"></div>
-
+        <div class="mypanel"></div>
+      </section>
     </Fragment>
   );
 };
@@ -128,4 +133,3 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
   withRouter(CreateProfile)
 );
-
