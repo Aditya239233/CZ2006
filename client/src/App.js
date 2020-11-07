@@ -10,6 +10,7 @@ import CreateProfile from "./components/profile-forms/CreateProfile";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import Visualization from "./components/visualization/Visualization";
 import Contact from "./components/contact/Contact";
+import Result from "./components/results/Result";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Redux
@@ -42,6 +43,11 @@ const App = () => {
                 exact
                 path="/create-profile"
                 component={CreateProfile}
+              />
+              <PrivateRoute
+                exact
+                path="/result"
+                component={Result}
               />
               <PrivateRoute
                 exact

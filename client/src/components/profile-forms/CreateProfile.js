@@ -61,14 +61,14 @@ const CreateProfile = ({
         </div>
         <div className="col-6">
           <select name="price" value={price} onChange={onChange}>
-            <option value="100,000">100,000</option>
-            <option value="200,000">200,000</option>
-            <option value="300,000">300,000</option>
-            <option value="400,000">400,000</option>
-            <option value="500,000">500,000</option>
-            <option value="600,000">600,000</option>
-            <option value="700,000">700,000</option>
-            <option value="800,000">800,000</option>
+            <option value="100000">100,000</option>
+            <option value="200000">200,000</option>
+            <option value="300000">300,000</option>
+            <option value="400000">400,000</option>
+            <option value="500000">500,000</option>
+            <option value="600000">600,000</option>
+            <option value="700000">700,000</option>
+            <option value="800000">800,000</option>
           </select>
           </div>
           </div>
