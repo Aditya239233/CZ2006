@@ -15,10 +15,3 @@ test("renders the component correctly - content", () => {
   );
   expect(linkElement).toBeInTheDocument();
 });
-
-test('renders the component correctly - logged in', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText("Not Logged In");
-  expect(linkElement).toBeInTheDocument();
-});
-
