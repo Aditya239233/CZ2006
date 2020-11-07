@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://atrik123:atrik123@devconnector-7yrxb.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "Iv1.722effb696b9f436",
+  "githubSecret": "059c1970cd43883856b7a157e72c50269aaabc5d"
+}

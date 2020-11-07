@@ -1,68 +1,65 @@
-import React, { Component } from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
-
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { logout } from "../../actions/auth";
 
-class Navbar_ extends Component {
-  render() {
-    const { user } = this.props;
-    return (
-      <nav>
-        <div className="nav-wrapper white">
-          <div className="left" style={{ padding: "5px" }}>
-            <img alt="" src={logo} width="60" height="60" />
-          </div>
-          <div
-            className="left black-text"
-            style={{ padding: "0px 10px", fontSize: "25px" }}
-          >
-            House Matchers
-          </div>
-          <div className="left" style={{ padding: "0px 10px" }}>
-            <Link className="black-text" to="/dashboard">
-              Home
-            </Link>
-          </div>
-          <div className="left" style={{ padding: "0px 10px" }}>
-            <Link className="black-text" to="/create-profile">
-              Recommend
-            </Link>
-          </div>
-          <div className="left" style={{ padding: "0px 10px" }}>
-            <Link className="black-text" to="/visualization">
-              Visualization
-            </Link>
-          </div>
-          <div className="left" style={{ padding: "0px 10px" }}>
-            <Link className="black-text" to="/contact">
-              Contact
-            </Link>
-          </div>
-          <a
-            href="#"
-            className="right black-text"
-            data-target="slide-out"
-            style={{ padding: "0px 20px" }}
-          >
-            <i className="material-icons">settings</i>
-          </a>
-          <div className="right black-text" style={{ padding: "0px 10px" }}>
-            {user.isAuthenticated ? user.user.name : "Not Logged In"}
-          </div>
-          <div className="right black-text">
-            <i className="material-icons">account_circle</i>
-          </div>
-        </div>
-      </nav>
-    );
-  }
-}
+const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+  const authLinks = (
+    <ul>
+      <li>
+        <Link to="/create-profile">Recommend</Link>
+      </li>
+      <li>
+        <Link to="/visualization">Visualization</Link>
+      </li>
+      <li>
+        <Link to="/dashboard">
+          <i className="fas fa-user" />{" "}
+          <span className="hide-sm">Dashboard</span>
+        </Link>
+      </li>
+      <li>
+        <a onClick={logout} href="#!">
+          <i className="fas fa-sign-out-alt" />{" "}
+          <span className="hide-sm">Logout</span>
+        </a>
+      </li>
+    </ul>
+  );
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.auth,
-  };
+  const guestLinks = (
+    <ul>
+      <li>
+        <Link to="/register">Register</Link>
+      </li>
+      <li>
+        <Link to="/login">Login</Link>
+      </li>
+    </ul>
+  );
+
+  return (
+    <nav className="navbar bg-dark">
+      <h1>
+        <Link to="/">
+          <i className="fas fa-home"></i> HouseMatchers
+        </Link>
+      </h1>
+      {!loading && (
+        <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
+      )}
+    </nav>
+  );
 };
 
-export default connect(mapStateToProps)(Navbar_);
+Navbar.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { logout })(Navbar);
