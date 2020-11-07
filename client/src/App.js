@@ -15,6 +15,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Visualization from "./components/visualization/Visualization";
 import CreateProfile from "./components/recommend/Recommend";
+import Contact from "./components/contact/Contact";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "semantic-ui-css/semantic.min.css";
@@ -64,6 +65,7 @@ class App extends Component {
                 component={CreateProfile}
               />
             </Switch>
+            <PrivateRoute exact path="/contact" component={Contact}/>
           </div>
         </Router>
       </Provider>
