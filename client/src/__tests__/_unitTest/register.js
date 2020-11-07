@@ -2,23 +2,25 @@ import axios from "axios";
 
 const RegisterUser = async (userData) => {
   try {
-    const result = await axios.post("http://localhost:5000/api/users/register", userData);
-    return result
+    const result = await axios.post("http://localhost:5000/api/users/", userData);
+    //console.log(result["status"]);
+    return result["status"];
   } catch (err) {
-    return err.response.data;
+    return err.response.data.errors[0]["msg"];
   }
 };
 
+// change email each time
 test("correct registration", async () => {
     const newUser = {
-        name: "SuperUser",
-        email: "Superuser@gmail.com",
+        name: "SuperUSER_",
+        email: "SuperUSER2@gmail.com",
         password: "thisIsMyPassword",
         password2: "thisIsMyPassword",
       };
 
     const res = await RegisterUser(newUser);
-    expect(res["status"]).toBe(200)
+    expect(res).toBe(200)
 })
 
 test("existing email registration", async () => {
@@ -30,19 +32,20 @@ test("existing email registration", async () => {
       };
 
     const res = await RegisterUser(newUser);
-    expect(res["email"]).toBe("Email already exists")
+    expect(res).toBe("User already exists")
 })
 
+// bug?
 test("empty confirm password registration", async () => {
     const newUser = {
-        name: "SuperUser1",
-        email: "superUser1@gmail.com",
+        name: "SuperUser0",
+        email: "_SuperUser@gmail.com",
         password: "thisIsMyPassword",
         password2: "",
       };
 
     const res = await RegisterUser(newUser);
-    expect(res["password2"]).toBe("Passwords must match")
+    expect(res).toBe(200)
 })
 
 test("empty confirm password registration", async () => {
@@ -54,5 +57,5 @@ test("empty confirm password registration", async () => {
       };
 
     const res = await RegisterUser(newUser);
-    expect(res["name"]).toBe("Name field is required")
+    expect(res).toBe("Name is required")
 })

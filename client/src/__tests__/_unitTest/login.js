@@ -2,13 +2,20 @@ import axios from "axios";
 
 const loginUser = async (userData) => {
   try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
     const result = await axios.post(
-      "http://localhost:5000/api/users/login",
-      userData
+      "http://localhost:5000/api/auth",
+      JSON.stringify(userData),
+      config
     );
-    return result;
+    return result["status"];
   } catch (err) {
-    return err.response.data;
+    return err.response.data.errors[0]["msg"];
   }
 };
 
@@ -18,7 +25,7 @@ test("incorrect login credentials", async () => {
     password: "pokemon123",
   };
   const res = await loginUser(userData);
-  expect(res["passwordincorrect"]).toBe("Password incorrect");
+  expect(res).toBe("Invalid Credentials");
 });
 
 test("empty email", async () => {
@@ -27,7 +34,7 @@ test("empty email", async () => {
     password: "pokemon123",
   };
   const res = await loginUser(userData);
-  expect(res["email"]).toBe("Email field is required");
+  expect(res).toBe("Please include a valid email");
 });
 
 test("empty password", async () => {
@@ -36,7 +43,7 @@ test("empty password", async () => {
     password: "",
   };
   const res = await loginUser(userData);
-  expect(res["password"]).toBe("Password field is required");
+  expect(res).toBe("Invalid Credentials");
 });
 
 test("correct password", async () => {
@@ -45,5 +52,5 @@ test("correct password", async () => {
     password: "pokemon1234",
   };
   const res = await loginUser(userData);
-  expect(res["status"]).toBe(200);
+  expect(res).toBe(200);
 });
