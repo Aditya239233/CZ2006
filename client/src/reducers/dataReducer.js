@@ -1,13 +1,18 @@
-import { HBD_DATA } from "../actions/types";
+import { HBD_BARGRAPH, HBD_TIMESERIES } from "../actions/types";
 
 const initial_state = [];
 
 export default function (state = initial_state, action) {
   switch (action.type) {
-    case HBD_DATA:
+    case HBD_BARGRAPH:
       return {
         ...state,
-        data: action.payload,
+        bargraph: action.payload,
+      };
+    case HBD_TIMESERIES:
+      return {
+        ...state,
+        timeseries: action.payload,
       };
     default:
       return state;

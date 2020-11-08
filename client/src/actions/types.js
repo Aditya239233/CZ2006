@@ -24,3 +24,5 @@ export const ADD_POST = "ADD_POST";
 export const ADD_COMMENT = "ADD_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const SEND_MESSAGE = "SEND_MESSAGE";
+export const HBD_BARGRAPH = "HBD_BARGRAPH";
+export const HBD_TIMESERIES = "HBD_TIMESERIES";
