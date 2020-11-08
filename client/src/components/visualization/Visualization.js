@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./Visualization.css";
 import { Bar, Line } from "react-chartjs-2";
 import map from "../../assets/Map.png";
@@ -94,7 +94,8 @@ class Visualization extends Component {
 
   render() {
     return (
-      <section className="container">
+      <Fragment>
+      <h1 className="large text-primary">Visualization Page</h1>
       <div className="wrapper">
         <div className="inner">
           <button
@@ -122,7 +123,7 @@ class Visualization extends Component {
         </div>
         <div className="">{graph(this.state.data)}</div>
       </div>
-      </section>
+      </Fragment>
     );
   }
 }

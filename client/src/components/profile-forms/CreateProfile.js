@@ -46,8 +46,7 @@ const CreateProfile = ({
 
   return (
     <Fragment>
-      <section className="container">
-        <h1 className="large text-primary">Recommendation Tab</h1>
+        <h1 className="large text-primary">Recommendation Page</h1>
         <p className="lead text-secondary">
           Add some changes to your search query
         </p>
@@ -154,7 +153,6 @@ const CreateProfile = ({
             Go Back
           </Link>
         </form>
-      </section>
     </Fragment>
   );
 };

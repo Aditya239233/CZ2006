@@ -34,6 +34,7 @@ const App = () => {
         <Fragment>
           <Navbar />
           <Route exact path="/" component={Landing} />
+          <section className="container">
             <Alert />
             <Switch>
               <Route exact path="/register" component={Register} />
@@ -56,6 +57,7 @@ const App = () => {
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/contact" component={Contact}/>
             </Switch>
+            </section>
         </Fragment>
       </Router>
     </Provider>

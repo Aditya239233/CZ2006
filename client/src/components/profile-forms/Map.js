@@ -37,7 +37,6 @@ class MapContainer extends Component {
 
   render() {
     return (
-      <section className="container">
         <div style={{ height: "70vh", width: "100%" }}>
           <Map
             google={this.props.google}
@@ -61,7 +60,6 @@ class MapContainer extends Component {
             ))}
           </Map>
         </div>
-      </section>
     );
   }
 }

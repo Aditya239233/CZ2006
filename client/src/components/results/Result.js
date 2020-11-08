@@ -111,11 +111,9 @@ const CreateProfile = ({
 
   return (
     <Fragment>
-      <section className="container">
         <h1 className="large text-primary">Results Page</h1>
 
         <div class="mypanel"></div>
-      </section>
     </Fragment>
   );
 };
