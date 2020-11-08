@@ -16,12 +16,7 @@ class Contact extends Component {
   };
   onSubmit = (e) => {
     e.preventDefault();
-    const userData = {
-      email: this.state.email,
-      message: this.state.message,
-    };
-    console.log(userData);
-    store.dispatch(sendMessage(userData))
+    store.dispatch(sendMessage(this.state.email, this.state.message));
   };
 
   render() {
@@ -34,11 +29,17 @@ class Contact extends Component {
               placeholder="Email Address"
               onChange={this.onChange}
               required
-              id = "email"
+              id="email"
             />
           </div>
           <div className="form-group">
-            <textarea id="message" onChange={this.onChange} placeholder="Do you have any Complaints or Suggestions?" required style={{height:"150px"}}></textarea>
+            <textarea
+              id="message"
+              onChange={this.onChange}
+              placeholder="Do you have any Complaints or Suggestions?"
+              required
+              style={{ height: "150px" }}
+            ></textarea>
           </div>
           <input type="submit" className="btn btn-primary" value="Submit" />
         </form>

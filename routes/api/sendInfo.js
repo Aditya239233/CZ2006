@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 
-router.get("/message", (req, res) => {
+router.post("/message", async (req, res) => {
+  email = req.body.email;
+  message = req.body.message;
+
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -14,8 +17,8 @@ router.get("/message", (req, res) => {
   var mailOptions = {
     from: "housematchers.no.reply@gmail.com",
     to: "housematchers.no.reply@gmail.com",
-    subject: "pls work",
-    text: "hahaha",
+    subject: "Email from " + email,
+    text: message,
   };
 
   transporter.sendMail(mailOptions, (err, info) => {

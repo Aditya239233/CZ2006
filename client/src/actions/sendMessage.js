@@ -1,8 +1,8 @@
 import { SEND_MESSAGE } from "./types";
 import axios from "axios";
 
-export const sendMessage = (message_context) => async (dispatch) => {
-  const res = await axios.get("/api/message", message_context);
+export const sendMessage = (email, message) => async (dispatch) => {
+  const res = await axios.post("/api/message", { email, message });
 
   dispatch({
     type: SEND_MESSAGE,
