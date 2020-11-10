@@ -742,3 +742,9 @@ label {
   margin-right: auto;
   width: 50%;
 }
+
+.house h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 6%;
+}

@@ -55,6 +55,8 @@ const CreateProfile = ({
       " " +
       location_lease_url,
     function (data) {
+
+      if (data.result.records[0]){        
       var text = `<div class="house">
                   <img src=${house1} alt="" class="image"></img>
                   <img src=${locations} alt="" class="locationimage"></img>
@@ -131,6 +133,10 @@ const CreateProfile = ({
                   </div>
                   </div>
                   <br><br>`;
+                }else{
+                  var text = `<div class="house"><h1>No Results Found.</h1></div>`
+      
+                }
 
       $(".mypanel").html(text);
     }
