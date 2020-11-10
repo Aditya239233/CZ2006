@@ -64,7 +64,7 @@ test("empty confirm password registration", async () => {
   expect(res).toBe(200);
 });
 
-test("empty confirm password registration", async () => {
+test("empty  name for registration", async () => {
   const newUser = {
     name: "",
     email: "superUser1@gmail.com",
