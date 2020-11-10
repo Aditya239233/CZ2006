@@ -22,7 +22,6 @@ class Visualization extends Component {
     var timeseries = store.getState()["data"]["timeseries"];
     return (
       <Fragment>
-        {console.log(timeseries)}
         <h1 className="large text-primary">Visualization Page</h1>
         <div className="wrapper">
           <div className="inner">
@@ -58,7 +57,7 @@ class Visualization extends Component {
 
 function graph(mode, bargraph, timeseries) {
   if (mode === "Heatmap") {
-    return <img alt="" src={map} width="475px" height="275px"></img>;
+    return createHeatMap();
   } else if (mode === "Bar Graph") {
     return (
       <div>
@@ -135,6 +134,10 @@ function graph(mode, bargraph, timeseries) {
       </div>
     );
   }
+}
+
+function createHeatMap() {
+  return <div></div>;
 }
 
 export default Visualization;
