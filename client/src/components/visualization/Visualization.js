@@ -1,14 +1,13 @@
 import React, { Component, Fragment } from "react";
 import { Bar, Line } from "react-chartjs-2";
-import map from "../../assets/Map.png";
-import { connect } from "react-redux";
 import store from "../../store";
 import { getBarGraph, getTimeSeries } from "../../actions/dataActions";
+import map from "../../assets/map.png";
 
 class Visualization extends Component {
   constructor() {
     super();
-    this.state = { data: "Heatmap" };
+    this.state = { data: "Bar Graph" };
   }
 
   btnClick(val) {
@@ -57,7 +56,7 @@ class Visualization extends Component {
 
 function graph(mode, bargraph, timeseries) {
   if (mode === "Heatmap") {
-    return createHeatMap();
+    return <img src={map} alt="" ></img>
   } else if (mode === "Bar Graph") {
     return (
       <div>
@@ -134,10 +133,6 @@ function graph(mode, bargraph, timeseries) {
       </div>
     );
   }
-}
-
-function createHeatMap() {
-  return <div></div>;
 }
 
 export default Visualization;
