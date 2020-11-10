@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import "./Visualization.css";
 import { Bar, Line } from "react-chartjs-2";
 import map from "../../assets/Map.png";
 import { connect } from "react-redux";
@@ -105,7 +104,7 @@ function graph(mode, bargraph, timeseries) {
                 {
                   scaleLabel: {
                     display: true,
-                    labelString: "Price",
+                    labelString: "Price in 10K",
                   },
                   type: "linear",
                   display: true,

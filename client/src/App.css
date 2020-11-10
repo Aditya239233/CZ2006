@@ -329,7 +329,7 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url("./img/showcase.jpg") no-repeat center center/cover;
+  background: url("./assets/showcase.jpg") no-repeat center center/cover;
   height: 100vh;
 }
 
@@ -676,4 +676,69 @@ label {
   clear: both;
   float: left;
   margin-right: 15px;
+}
+
+.mypanel {
+  padding-left: 150px;
+  padding-top: 40px;
+}
+
+.house {
+  background-color: #d3d3d3;
+  height: 140px;
+  width: 800px;
+  border-style: solid;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.image {
+  width: 160px;
+  height: 135px;
+  float: left;
+}
+
+.location {
+  color: #4c96d7;
+  padding-top: 15px;
+  padding-left: 180px;
+}
+
+.price {
+  padding-top: 15px;
+  color: #e78200;
+  padding-left: 180px;
+}
+
+.locationimage {
+  width: 80px;
+  float: right;
+  padding-top: 25px;
+  padding-right: 10px;
+}
+
+.others {
+  padding-top: 15px;
+  padding-left: 180px;
+}
+
+.wrapper {
+  text-align: center;
+  padding-top: 75px;
+}
+.inner {
+  display: inline-block;
+  padding: 0px 0px 100px 75px;
+}
+
+.heading {
+  border: none !important;
+  background-color: white;
+}
+
+.graph {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
