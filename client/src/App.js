@@ -12,6 +12,7 @@ import Visualization from "./components/visualization/Visualization";
 import Contact from "./components/contact/Contact";
 import Result from "./components/results/Result";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { getBarGraph, getTimeSeries } from "./actions/dataActions";
 
 // Redux
 import { Provider } from "react-redux";
@@ -25,6 +26,8 @@ if (localStorage.token) {
 
 const App = () => {
   useEffect(() => {
+    store.dispatch(getBarGraph());
+    store.dispatch(getTimeSeries());
     store.dispatch(loadUser());
   }, []);
 
@@ -44,20 +47,16 @@ const App = () => {
                 path="/create-profile"
                 component={CreateProfile}
               />
-              <PrivateRoute
-                exact
-                path="/result"
-                component={Result}
-              />
+              <PrivateRoute exact path="/result" component={Result} />
               <PrivateRoute
                 exact
                 path="/visualization"
                 component={Visualization}
               />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute exact path="/contact" component={Contact}/>
+              <PrivateRoute exact path="/contact" component={Contact} />
             </Switch>
-            </section>
+          </section>
         </Fragment>
       </Router>
     </Provider>

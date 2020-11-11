@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Bar, Line } from "react-chartjs-2";
 import store from "../../store";
-import { getBarGraph, getTimeSeries } from "../../actions/dataActions";
 import map from "../../assets/map.png";
 
 class Visualization extends Component {
@@ -15,8 +14,6 @@ class Visualization extends Component {
   }
 
   render() {
-    store.dispatch(getBarGraph());
-    store.dispatch(getTimeSeries());
     var bargraph = store.getState()["data"]["bargraph"];
     var timeseries = store.getState()["data"]["timeseries"];
     return (
@@ -56,7 +53,7 @@ class Visualization extends Component {
 
 function graph(mode, bargraph, timeseries) {
   if (mode === "Heatmap") {
-    return <img src={map} alt="" ></img>
+    return <img src={map} alt=""></img>;
   } else if (mode === "Bar Graph") {
     return (
       <div>
