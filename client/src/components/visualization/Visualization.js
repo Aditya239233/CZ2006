@@ -23,7 +23,13 @@ class Visualization extends Component {
           <div className="inner">
             <button
               className="heading"
-              onClick={this.btnClick.bind(this, "Heatmap")}
+              onClick={() => {
+                this.btnClick.bind(this, "Heatmap");
+                window.open(
+                  "http://127.0.0.1:5500/client/src/components/visualization/choropleth.html",
+                  "_blank"
+                );
+              }}
             >
               Heatmap
             </button>
