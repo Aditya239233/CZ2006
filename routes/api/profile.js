@@ -35,12 +35,7 @@ router.get("/me", auth, async (req, res) => {
 // @access   Private
 router.post(
   "/",
-  [
-    auth,
-    [
-      check("price", "Price is required").not().isEmpty(),
-    ],
-  ],
+  [auth, [check("price", "Price is required").not().isEmpty()]],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -82,6 +77,5 @@ router.post(
     }
   }
 );
-
 
 module.exports = router;

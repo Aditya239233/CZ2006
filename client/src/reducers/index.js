@@ -10,5 +10,5 @@ export default combineReducers({
   auth,
   profile,
   message,
-  data
+  data,
 });

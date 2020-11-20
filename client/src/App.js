@@ -12,7 +12,7 @@ import Visualization from "./components/visualization/Visualization";
 import Contact from "./components/contact/Contact";
 import Result from "./components/results/Result";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { getBarGraph, getTimeSeries } from "./actions/dataActions";
+import { getBarGraph, getTimeSeries } from "./actions/data";
 
 // Redux
 import { Provider } from "react-redux";

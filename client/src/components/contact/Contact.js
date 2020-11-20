@@ -1,4 +1,4 @@
-import React, { Component, TextField, Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import { sendMessage } from "../../actions/sendMessage";
 import store from "../../store";
 
@@ -17,7 +17,7 @@ class Contact extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     store.dispatch(sendMessage(this.state.email, this.state.message));
-    alert('Email sent successfully')
+    alert("Email sent successfully");
   };
 
   render() {
@@ -43,9 +43,9 @@ class Contact extends Component {
               style={{ height: "150px" }}
             ></textarea>
           </div>
-          <input type="submit" className="btn btn-primary" value="Submit"/>
+          <input type="submit" className="btn btn-primary" value="Submit" />
         </form>
-        </Fragment>
+      </Fragment>
     );
   }
 }

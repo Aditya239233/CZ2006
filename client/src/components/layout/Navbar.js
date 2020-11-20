@@ -16,8 +16,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <li>
         <Link to="/visualization">Visualization</Link>
       </li>
-      <li>
-      </li>
+      <li></li>
       <li>
         <Link to="/contact">
           <span className="hide-sm">Contact Us</span>

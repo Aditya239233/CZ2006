@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 
 class MapContainer extends Component {
   constructor(props) {
@@ -37,29 +37,29 @@ class MapContainer extends Component {
 
   render() {
     return (
-        <div style={{ height: "70vh", width: "100%" }}>
-          <Map
-            google={this.props.google}
-            style={{ height: "70%", width: "60%" }}
-            className={"map"}
-            class="map"
-            initialCenter={{
-              lat: 1.362495,
-              lng: 103.826994,
-            }}
-            zoom={11.5}
-            onClick={this.onClick}
-          >
-            {this.state.markers.map((marker, index) => (
-              <Marker
-                key={index}
-                title={marker.title}
-                name={marker.name}
-                position={marker.position}
-              />
-            ))}
-          </Map>
-        </div>
+      <div style={{ height: "70vh", width: "100%" }}>
+        <Map
+          google={this.props.google}
+          style={{ height: "70%", width: "60%" }}
+          className={"map"}
+          class="map"
+          initialCenter={{
+            lat: 1.362495,
+            lng: 103.826994,
+          }}
+          zoom={11.5}
+          onClick={this.onClick}
+        >
+          {this.state.markers.map((marker, index) => (
+            <Marker
+              key={index}
+              title={marker.title}
+              name={marker.name}
+              position={marker.position}
+            />
+          ))}
+        </Map>
+      </div>
     );
   }
 }
